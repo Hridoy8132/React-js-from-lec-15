@@ -63,45 +63,62 @@
 
 //  ////// ///// Lec-17 Start here ( Handle form, Checkbox, Input field)
 
-import React,{useState} from "react";
+// import React,{useState} from "react";
+
+// function App()
+// {
+//   const [name,setName]=useState("");
+//   const [tnc,setTnc]=useState("false");
+//   const [interest,setInterest]=useState("");
+//   function getFormData(e)
+//   {
+//     console.warn(name,tnc,interest)
+//     e.preventDefault()
+//   }
+//   return(
+//     <div className="app">
+//       <h1> Handle form in React </h1>
+//       <form onSubmit={getFormData}>
+//         <input type="text" placeholder="Enter your name" value ={name} onChange={(e)=>setName(e.target.value)}/> 
+//         <br/> <br/>
+
+//         <select onChange={(e)=>setInterest(e.target.value)}>
+//            <option> Select Options </option>
+//            <option> Marvel  </option>
+//            <option> DC </option>
+//         </select>
+//         <br/> <br/>
+
+//         <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)}/> <span> Accept Terms and Condition </span>
+//         <br/> <br/>
+//         <button type="submit"> Submit </button> 
+//         <button type="clear"> Clear </button>
+
+//       </form>
+//     </div>
+
+
+
+//   );
+// }
+
+// export default App;
+
+////// ///// Lec-17 End here "( Handle form, Checkbox, Input field)
+
+// //// Lec-18(Conditional Rendering | If Condition)
+
+import React from "react";
+import Profile from "./Profile";
 
 function App()
 {
-  const [name,setName]=useState("");
-  const [tnc,setTnc]=useState("false");
-  const [interest,setInterest]=useState("");
-  function getFormData(e)
-  {
-    console.warn(name,tnc,interest)
-    e.preventDefault()
-  }
   return(
     <div className="app">
-      <h1> Handle form in React </h1>
-      <form onSubmit={getFormData}>
-        <input type="text" placeholder="Enter your name" value ={name} onChange={(e)=>setName(e.target.value)}/> 
-        <br/> <br/>
-
-        <select onChange={(e)=>setInterest(e.target.value)}>
-           <option> Select Options </option>
-           <option> Marvel  </option>
-           <option> DC </option>
-        </select>
-        <br/> <br/>
-
-        <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)}/> <span> Accept Terms and Condition </span>
-        <br/> <br/>
-        <button type="submit"> Submit </button> 
-        <button type="clear"> Clear </button>
-
-      </form>
+      <Profile/>
     </div>
-
-
 
   );
 }
 
 export default App;
-
-////// ///// Lec-17 End here ( Handle form, Checkbox, Input field)
