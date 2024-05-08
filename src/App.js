@@ -108,17 +108,36 @@
 
 // //// Lec-18(Conditional Rendering | If Condition)
 
-import React from "react";
-import Profile from "./Profile";
+// import React from "react";
+// import Profile from "./Profile";
 
-function App()
-{
+// function App()
+// {
+//   return(
+//     <div className="app">
+//       <Profile/>
+//     </div>
+
+//   );
+// }
+
+// export default App;
+
+// // Lec 19 start here  Basic form Validation
+
+import Login from './Login'
+
+function App() {
+
+  const data = true;
   return(
     <div className="app">
-      <Profile/>
+      <Login/>
     </div>
 
   );
 }
 
 export default App;
+
+// // Lec 19 end Basic form Validation
