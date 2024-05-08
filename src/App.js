@@ -33,29 +33,75 @@
 
 // Lec-16  Start here ( Hide, Show and Toggle ).
 
+// import React,{useState} from "react";
+
+// function App()
+// {
+//   const [status,setStatus]=useState(false)
+//   return (
+//     <div className="app">
+
+//       {
+//         status? 
+//         <h1> Hridoy Khan </h1>:null
+//       }
+        
+//         <button onClick={()=>setStatus(false)}> Hide </button>
+//             <button onClick={()=>setStatus(true)}> Show </button>
+
+//         {/* <button onClick={()=>setStatus(!status)}> Toggle </button> */}
+        
+//     </div>
+
+//   );
+// }
+
+// export default App;
+
+// Lec-16  Close here ( Hide, Show and Toggle ).
+
+
+//  ////// ///// Lec-17 Start here ( Handle form, Checkbox, Input field)
+
 import React,{useState} from "react";
 
 function App()
 {
-  const [status,setStatus]=useState(false)
-  return (
+  const [name,setName]=useState("");
+  const [tnc,setTnc]=useState("false");
+  const [interest,setInterest]=useState("");
+  function getFormData(e)
+  {
+    console.warn(name,tnc,interest)
+    e.preventDefault()
+  }
+  return(
     <div className="app">
+      <h1> Handle form in React </h1>
+      <form onSubmit={getFormData}>
+        <input type="text" placeholder="Enter your name" value ={name} onChange={(e)=>setName(e.target.value)}/> 
+        <br/> <br/>
 
-      {
-        status? 
-        <h1> Hridoy Khan </h1>:null
-      }
-        
-        <button onClick={()=>setStatus(false)}> Hide </button>
-            <button onClick={()=>setStatus(true)}> Show </button>
+        <select onChange={(e)=>setInterest(e.target.value)}>
+           <option> Select Options </option>
+           <option> Marvel  </option>
+           <option> DC </option>
+        </select>
+        <br/> <br/>
 
-        {/* <button onClick={()=>setStatus(!status)}> Toggle </button> */}
-        
+        <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)}/> <span> Accept Terms and Condition </span>
+        <br/> <br/>
+        <button type="submit"> Submit </button> 
+        <button type="clear"> Clear </button>
+
+      </form>
     </div>
+
+
 
   );
 }
 
 export default App;
 
-// Lec-16  Close here ( Hide, Show and Toggle ).
+////// ///// Lec-17 End here ( Handle form, Checkbox, Input field)
