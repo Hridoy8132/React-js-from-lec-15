@@ -58,14 +58,15 @@ function Login()
   return(
     <div className="app">
       <form onSubmit={loginHandle}> 
-      <h1> Login </h1>
+      <h1> Login Form </h1>
+    
       <input type="text" placeholder="Enter User Id "  onChange={userHandler}/>{userErr?<span>
         User Not Valid </span>:""}
       <br/> <br/>
       <input type="password" placeholder="Enter User Password " onChange={passwordHandler}/>{passErr?<span>
         Password Not Valid </span>:""}
       <br/> <br/>
-      <button type="submit" > Login </button>
+      <button type="submit" className="login-button"> Login </button>
 
       </form>
     </div>

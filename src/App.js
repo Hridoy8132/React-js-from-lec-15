@@ -125,14 +125,40 @@
 
 // // Lec 19 start here  Basic form Validation
 
-import Login from './Login'
+// import Login from './Login'
 
+// function App() {
+
+//   // const data = true;
+//   return(
+//     <div className="app">
+//       <Login/>
+//     </div>
+
+//   );
+// }
+
+// export default App;
+
+// // Lec 19 end Basic form Validation
+
+// /// Lec 20 start ( Pass Function as Props)
+import React from "react";
+import User from "./User";
+import Members from "./Members";
 function App() {
+  function getData()
+  {
+    alert("hello from app")
+  }
 
-  const data = true;
+  
   return(
-    <div className="app">
-      <Login/>
+    <div className="App">
+      <User data={getData}/>
+      <div>
+        <Members data={getData}/>
+      </div>
     </div>
 
   );
@@ -140,4 +166,4 @@ function App() {
 
 export default App;
 
-// // Lec 19 end Basic form Validation
+// /// Lec 20 End here (Pass Function as Props)
