@@ -143,27 +143,51 @@
 // // Lec 19 end Basic form Validation
 
 // /// Lec 20 start ( Pass Function as Props)
-import React from "react";
-import User from "./User";
-import Members from "./Members";
-function App() {
-  function getData()
-  {
-    alert("hello from app")
-  }
+
+// import React from "react";
+// import User from "./User";
+// import Members from "./Members";
+// function App() {
+//   function getData()
+//   {
+//     alert("hello from app")
+//   }
 
   
-  return(
-    <div className="App">
-      <User data={getData}/>
-      <div>
-        <Members data={getData}/>
-      </div>
-    </div>
+//   return(
+//     <div className="App">
+//       <User data={getData}/>
+//       <div>
+//         <Members data={getData}/>
+//       </div>
+//     </div>
 
+//   );
+// }
+
+// export default App;
+
+// /// Lec 20 End here (Pass Function as Props)
+
+// /// L-29 UseEffect Hook 
+
+import './App.css';
+import React, { useEffect, useState } from 'react'
+
+function App() {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    console.warn("use effect")
+  })
+  return (
+    <div className="App">
+      <h1>useEffect in React {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Update Counter</button>
+    </div>
   );
 }
 
 export default App;
 
-// /// Lec 20 End here (Pass Function as Props)
+// /// L-29 Ends here UseEffect Hook 
+
