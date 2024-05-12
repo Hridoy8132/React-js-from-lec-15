@@ -400,7 +400,7 @@
 
 // Lec- 39 end Pure component using class:
 
-// Lec- 40 start Pure component using class:
+// Lec- 40 start useMemo in Reactjs.
 
 
 
@@ -431,7 +431,7 @@ function App() {
 
 export default App;
 
-// Lec- 40 end  Pure component using class:
+// Lec- 40 Lec-40 end useMemo in Reactjs
 
 
 
