@@ -372,32 +372,67 @@
 
 // Lec- 39 start Pure component using class:
 
+// import './App.css';
+// import React,{PureComponent} from 'react'
+// import Counter from './Lec-39';
+// class  App extends React.Component {
+//   constructor()
+//   {
+//     super();
+//     this.state={
+//       count:1
+//     }
+//   }
+//  render()
+//  {
+//   return (
+//     <div className="App">
+//      <Counter count={this.state.count} />
+//       <button 
+//       onClick={()=>{this.setState({count:this.state.count+1})}}
+//       >Update Count</button>
+//     </div>
+//   );
+//  }
+// }
+
+// export default App;
+
+// Lec- 39 end Pure component using class:
+
+// Lec- 40 start Pure component using class:
+
+
+
 import './App.css';
-import React,{PureComponent} from 'react'
-import Counter from './Lec-39';
-class  App extends React.Component {
-  constructor()
-  {
-    super();
-    this.state={
-      count:1
+import React, { useState, useMemo } from 'react'
+function App() {
+  const [count, setData] = useState(0)
+  const [item, setItem] = useState(10)
+
+  const newApple=useMemo(
+    function multiCount() {
+      console.warn("multiCount")
+      return count * 5 ;
     }
-  }
- render()
- {
+  ,[count])
   return (
     <div className="App">
-     <Counter count={this.state.count} />
-      <button 
-      onClick={()=>{this.setState({count:this.state.count+1})}}
-      >Update Count</button>
+      <h1>Hooks in React </h1>
+      <h2> Count :{count} </h2>
+      <h2> Item :{item} </h2>
+      {newApple}
+      <button onClick={() => setData(count + 1)}>Update Count </button>
+      <button onClick={() => setItem(item * 10)}>Update Item </button>
+
     </div>
   );
- }
 }
 
 export default App;
 
-// Lec- 39 end Pure component using class:
+// Lec- 40 end  Pure component using class:
+
+
 
 
