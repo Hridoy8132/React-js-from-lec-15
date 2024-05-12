@@ -324,27 +324,50 @@
 
 // /// Lec-37 Stat Fragments in ReactJs
 
-import './App.css';
-import React from 'react'
-import Cols from './Cols'
-function App() {
-  return (
-    <>
-      <h1>React Fragment</h1>
-     <table>
-       <tbody>
-         <tr>
-          <Cols />
+// import './App.css';
+// import React from 'react'
+// import Cols from './Cols'
+// function App() {
+//   return (
+//     <>
+//       <h1>React Fragment</h1>
+//      <table>
+//        <tbody>
+//          <tr>
+//           <Cols />
     
-         </tr>
-       </tbody>
-     </table>
-      </>
+//          </tr>
+//        </tbody>
+//      </table>
+//       </>
       
+//   );
+// }
+
+// export default App;
+
+// /// Lec-37 End Fragments in ReactJs
+
+// // Lec-38 Start Send Data Child to Parent Component.
+
+import React from 'react'
+import './App.css';
+import User from './Lec-38';
+function App() {
+  function getName(name)
+  {
+    alert(name)
+  }
+  return (
+    <div className="App">
+      <h1>Lifting State Up</h1>
+      <User getData={getName} />
+    </div>
   );
 }
 
 export default App;
 
-// /// Lec-37 End Fragments in ReactJs
+// Lec-38 End Send Data Child to Parent Component.
+
 
