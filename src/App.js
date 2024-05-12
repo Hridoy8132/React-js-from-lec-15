@@ -350,24 +350,54 @@
 
 // // Lec-38 Start Send Data Child to Parent Component.
 
-import React from 'react'
+// import React from 'react'
+// import './App.css';
+// import User from './Lec-38';
+// function App() {
+//   function getName(name)
+//   {
+//     alert(name)
+//   }
+//   return (
+//     <div className="App">
+//       <h1>Lifting State Up</h1>
+//       <User getData={getName} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Lec-38 End Send Data Child to Parent Component.
+
+// Lec- 39 start Pure component using class:
+
 import './App.css';
-import User from './Lec-38';
-function App() {
-  function getName(name)
+import React,{PureComponent} from 'react'
+import Counter from './Lec-39';
+class  App extends React.Component {
+  constructor()
   {
-    alert(name)
+    super();
+    this.state={
+      count:1
+    }
   }
+ render()
+ {
   return (
     <div className="App">
-      <h1>Lifting State Up</h1>
-      <User getData={getName} />
+     <Counter count={this.state.count} />
+      <button 
+      onClick={()=>{this.setState({count:this.state.count+1})}}
+      >Update Count</button>
     </div>
   );
+ }
 }
 
 export default App;
 
-// Lec-38 End Send Data Child to Parent Component.
+// Lec- 39 end Pure component using class:
 
 
