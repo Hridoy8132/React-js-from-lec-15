@@ -3,8 +3,8 @@
 // import React,{useState} from 'react';
 
 // function App() {
-// const [data,setData]=useState(null) 
-// const [print,setPrint]=useState(false) 
+// const [data,setData]=useState(null)
+// const [print,setPrint]=useState(false)
 
 //   function getData(val)
 //   {
@@ -19,17 +19,15 @@
 //         <h1> {data} </h1>
 //         :null
 //       }
-       
+
 //       <input type ="text" onChange={getData}/>
 //       <button onClick={()=>setPrint(true)}> Print Data </button>
-      
+
 //     </div>
 //   );
 // }
 
 // export default App;
-
-
 
 // Lec-16  Start here ( Hide, Show and Toggle ).
 
@@ -42,15 +40,15 @@
 //     <div className="app">
 
 //       {
-//         status? 
+//         status?
 //         <h1> Hridoy Khan </h1>:null
 //       }
-        
+
 //         <button onClick={()=>setStatus(false)}> Hide </button>
 //             <button onClick={()=>setStatus(true)}> Show </button>
 
 //         {/* <button onClick={()=>setStatus(!status)}> Toggle </button> */}
-        
+
 //     </div>
 
 //   );
@@ -59,7 +57,6 @@
 // export default App;
 
 // Lec-16  Close here ( Hide, Show and Toggle ).
-
 
 //  ////// ///// Lec-17 Start here ( Handle form, Checkbox, Input field)
 
@@ -79,7 +76,7 @@
 //     <div className="app">
 //       <h1> Handle form in React </h1>
 //       <form onSubmit={getFormData}>
-//         <input type="text" placeholder="Enter your name" value ={name} onChange={(e)=>setName(e.target.value)}/> 
+//         <input type="text" placeholder="Enter your name" value ={name} onChange={(e)=>setName(e.target.value)}/>
 //         <br/> <br/>
 
 //         <select onChange={(e)=>setInterest(e.target.value)}>
@@ -91,13 +88,11 @@
 
 //         <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)}/> <span> Accept Terms and Condition </span>
 //         <br/> <br/>
-//         <button type="submit"> Submit </button> 
+//         <button type="submit"> Submit </button>
 //         <button type="clear"> Clear </button>
 
 //       </form>
 //     </div>
-
-
 
 //   );
 // }
@@ -153,7 +148,6 @@
 //     alert("hello from app")
 //   }
 
-  
 //   return(
 //     <div className="App">
 //       <User data={getData}/>
@@ -169,25 +163,71 @@
 
 // /// Lec 20 End here (Pass Function as Props)
 
-// /// L-29 UseEffect Hook 
+// /// L-29 UseEffect Hook
 
-import './App.css';
-import React, { useEffect, useState } from 'react'
+// import './App.css';
+// import React, { useEffect, useState } from 'react'
 
+// function App() {
+//   const [count, setCount] = useState(0)
+//   useEffect(() => {
+//     console.warn("use effect")
+//   })
+//   return (
+//     <div className="App">
+//       <h1>useEffect in React {count}</h1>
+//       <button onClick={() => setCount(count + 1)}>Update Counter</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// /// L-29 Ends here UseEffect Hook
+
+// lecture -34 start here List with Bootstrap table
+
+import React from "react";
+import { Table } from "react-bootstrap";
 function App() {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    console.warn("use effect")
-  })
+  const users = [
+    { name: "Anil", email: "anil@test.com", contact: "111" },
+    { name: "Burce", email: "bruce@test.com", contact: "222" },
+    { name: "Peter", email: "peter@test.com", contact: "111" },
+    { name: "Sam", email: "sam@test.com", contact: "777" },
+  ];
   return (
     <div className="App">
-      <h1>useEffect in React {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Update Counter</button>
+      <h1>List With Bootstrap Table</h1>
+      <Table striped variant="dark">
+        
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Contacts</td>
+          </tr>
+         { 
+          users.map((item, i) =>
+              <tr key={i}>
+                <td>{item.name}</td>
+                <td>{item.email}</td>
+                <td>{item.contact}</td>
+              </tr>
+            ) 
+          }   
+
+          {/*kono specific contact find korte bolow code ta korte hobe
+            users.map((item, i) => 
+            item.contact === '111' ?  
+            </tr>:null  */}
+
+        </tbody>
+      </Table>
     </div>
   );
 }
 
 export default App;
 
-// /// L-29 Ends here UseEffect Hook 
-
+// lecture -34 end here List with Bootstrap table
