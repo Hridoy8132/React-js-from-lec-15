@@ -516,25 +516,64 @@
 
 // // Lec-43 End forwardRef in Reactjs
 
-// // Lec-44 Controlled Component
+// // Lec-44 start Controlled Component
+
+
+// import './App.css';
+// import React,{useState} from 'react'
+// function App() {
+//   let [val,setVal]=useState("")
+//   let [item,setItem]=useState("")
+
+//    return (
+//     <div className="App">
+//       <h1>Controlled Component </h1>
+//       <input type="text" value={val} onChange={(e)=>setVal(e.target.value)} />
+//       <input type="text" value={item} onChange={(e)=>setItem(e.target.value)} />
+//    <h2>{val}</h2>
+//    <h2>{item}</h2>
+//     </div>
+//   );
+
+// }
+// export default  App;
+
+// // Lec-44 end Controlled Component
+
+// // Lec-45 start Uncontrolled Component in useRef:
 
 
 import './App.css';
-import React,{useState} from 'react'
+import React, { useRef } from 'react'
 function App() {
-  let [val,setVal]=useState("")
-  let [item,setItem]=useState("")
+  let inputRef = useRef(null)
+  let inputRef2 = useRef(null)
 
-   return (
+  function submitForm(e) {
+    e.preventDefault()
+    console.warn("input field 1 value : ", inputRef.current.value)
+    console.warn("input field 2 value : ", inputRef2.current.value)
+    let input3 = document.getElementById('input3').value
+    console.warn("input field 3 value : ", input3)
+
+
+  }
+  return (
     <div className="App">
-      <h1>Controlled Component </h1>
-      <input type="text" value={val} onChange={(e)=>setVal(e.target.value)} />
-      <input type="text" value={item} onChange={(e)=>setItem(e.target.value)} />
-   <h2>{val}</h2>
-   <h2>{item}</h2>
+      <h1>Uncontrolled Component </h1>
+      <form onSubmit={submitForm} >
+        <input ref={inputRef} type="text" /> <br /> <br />
+        <input ref={inputRef2} type="text" /> <br /> <br />
+        <input id="input3" type="text" /> <br /> <br />
+
+        <button>Submit</button>
+      </form>
     </div>
   );
 
 }
-export default  App;
+export default App;
+
+// // Lec-45 end Uncontrolled Component in useRef:
+
 
