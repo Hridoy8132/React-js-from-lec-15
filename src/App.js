@@ -400,38 +400,76 @@
 
 // Lec- 39 end Pure component using class:
 
-// Lec- 40 start Pure component using class:
+// Lec- 40 start UseMemo Hook in Reactjs.
 
+
+
+// import './App.css';
+// import React, { useState, useMemo } from 'react'
+// function App() {
+//   const [count, setData] = useState(0)
+//   const [item, setItem] = useState(10)
+
+//   const newApple=useMemo(
+//     function multiCount() {
+//       console.warn("multiCount")
+//       return count * 5 ;
+//     }
+//   ,[count])
+//   return (
+//     <div className="App">
+//       <h1>Hooks in React </h1>
+//       <h2> Count :{count} </h2>
+//       <h2> Item :{item} </h2>
+//       {newApple}
+//       <button onClick={() => setData(count + 1)}>Update Count </button>
+//       <button onClick={() => setItem(item * 10)}>Update Item </button>
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Lec- 40 End UseMemo Hook in Reactjs.
+
+// // Lec-41 start Ref in React js using class component:
 
 
 import './App.css';
-import React, { useState, useMemo } from 'react'
-function App() {
-  const [count, setData] = useState(0)
-  const [item, setItem] = useState(10)
+import React,{createRef} from 'react'
+class App extends React.Component {
+  constructor()
+  {
+    super();
+    this.inputRef=createRef();
+  }
+  componentDidMount()
+  {
+    // console.warn(this.inputRef.current.value="1000")
+  }
+  getVal()
+  {
+    console.warn(this.inputRef.current.value)
+    this.inputRef.current.style.color="red"
+    this.inputRef.current.style.backgroundColor="black"
 
-  const newApple=useMemo(
-    function multiCount() {
-      console.warn("multiCount")
-      return count * 5 ;
-    }
-  ,[count])
-  return (
-    <div className="App">
-      <h1>Hooks in React </h1>
-      <h2> Count :{count} </h2>
-      <h2> Item :{item} </h2>
-      {newApple}
-      <button onClick={() => setData(count + 1)}>Update Count </button>
-      <button onClick={() => setItem(item * 10)}>Update Item </button>
-
-    </div>
-  );
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Ref in React </h1>
+        <input type="text" ref={this.inputRef}  />
+        <button onClick={()=>this.getVal()}>Check Ref</button>
+      </div>
+    );
+  }
 }
 
 export default App;
 
-// Lec- 40 end  Pure component using class:
+// // Lec-41 end Ref in React js using class component:
+
 
 
 
