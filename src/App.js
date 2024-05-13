@@ -437,72 +437,67 @@
 // // Lec-41 start Ref in React js using class component:
 
 
-// import './App.css';
-// import React,{createRef} from 'react'
-// class App extends React.Component {
-//   constructor()
-//   {
-//     super();
-//     this.inputRef=createRef();
-//   }
-//   componentDidMount()
-//   {
-//     // console.warn(this.inputRef.current.value="1000")
-//   }
-//   getVal()
-//   {
-//     console.warn(this.inputRef.current.value)
-//     this.inputRef.current.style.color="red"
-//     this.inputRef.current.style.backgroundColor="black"
-
-//   }
-//   render() {
-//     return (
-//       <div className="App">
-//         <h1>Ref in React </h1>
-//         <input type="text" ref={this.inputRef}  />
-//         <button onClick={()=>this.getVal()}>Check Ref</button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
-// // Lec-41 end Ref in React js using class component:
-
-
-// // Lec-42 start UseRef in React 
-import React,{useRef} from 'react'
-function App() {
-  let inputRef=useRef(null);
-  function controlInput()
+import './App.css';
+import React,{createRef} from 'react'
+class App extends React.Component {
+  constructor()
   {
-  // inputRef.current.value="abc"
-  // inputRef.current.style.display="none"
-  // inputRef.current.focus()
-  inputRef.current.style.color="red"
+    super();
+    this.inputRef=createRef();
+  }
+  componentDidMount()
+  {
+    // console.warn(this.inputRef.current.value="1000")
+  }
+  getVal()
+  {
+    console.warn(this.inputRef.current.value)
+    this.inputRef.current.style.color="red"
+    this.inputRef.current.style.backgroundColor="black"
 
   }
-  return (
-    <div className="App">
-      <h1>useRef in React </h1>
-      <input type="text" ref={inputRef} />
-      <button onClick={controlInput}>Handle Input</button>
-    </div>
-  );
-
+  render() {
+    return (
+      <div className="App">
+        <h1>Ref in React </h1>
+        <input type="text" ref={this.inputRef}  />
+        <button onClick={()=>this.getVal()}>Check Ref</button>
+      </div>
+    );
+  }
 }
 
 export default App;
 
-<<<<<<< HEAD
-// // Lec-42 end start UseRef in React 
+// Lec-41 end Ref in React js using class component:
 
 
-=======
-// Lec- 40 Lec-40 end useMemo in Reactjs
->>>>>>> 85affde69a1250147790b1594439e542a936c241
+// // // Lec-42 start UseRef in React 
+// import React,{useRef} from 'react'
+// function App() {
+//   let inputRef=useRef(null);
+//   function controlInput()
+//   {
+//   // inputRef.current.value="abc"
+//   // inputRef.current.style.display="none"
+//   // inputRef.current.focus()
+//   inputRef.current.style.color="red"
+
+//   }
+//   return (
+//     <div className="App">
+//       <h1>useRef in React </h1>
+//       <input type="text" ref={inputRef} />
+//       <button onClick={controlInput}>Handle Input</button>
+//     </div>
+//   );
+
+// }
+
+// export default App;
+
+
+// // Lec-42 end UseRef in React 
 
 
 
