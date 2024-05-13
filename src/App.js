@@ -400,6 +400,7 @@
 
 // Lec- 39 end Pure component using class:
 
+
 // Lec- 40 start UseMemo Hook in Reactjs.
 
 
@@ -495,9 +496,13 @@ function App() {
 
 export default App;
 
+<<<<<<< HEAD
 // // Lec-42 end start UseRef in React 
 
 
+=======
+// Lec- 40 Lec-40 end useMemo in Reactjs
+>>>>>>> 85affde69a1250147790b1594439e542a936c241
 
 
 
