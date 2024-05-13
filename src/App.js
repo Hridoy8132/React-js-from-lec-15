@@ -200,26 +200,26 @@
 //     <div className="App">
 //       <h1>List With Bootstrap Table</h1>
 //       <Table striped variant="dark">
-        
+
 //         <tbody>
 //           <tr>
 //             <td>Name</td>
 //             <td>Email</td>
 //             <td>Contacts</td>
 //           </tr>
-//          { 
+//          {
 //           users.map((item, i) =>
 //               <tr key={i}>
 //                 <td>{item.name}</td>
 //                 <td>{item.email}</td>
 //                 <td>{item.contact}</td>
 //               </tr>
-//             ) 
-//           }   
+//             )
+//           }
 
 //           {/*kono specific contact find korte bolow code ta korte hobe
-//             users.map((item, i) => 
-//             item.contact === '111' ?  
+//             users.map((item, i) =>
+//             item.contact === '111' ?
 //             </tr>:null  */}
 
 //         </tbody>
@@ -233,7 +233,6 @@
 // lecture -34 end here List with Bootstrap table
 
 // / Lec-35 start Nested list with multidimension in Array:
-
 
 // import './App.css';
 // import React from 'react'
@@ -335,12 +334,12 @@
 //        <tbody>
 //          <tr>
 //           <Cols />
-    
+
 //          </tr>
 //        </tbody>
 //      </table>
 //       </>
-      
+
 //   );
 // }
 
@@ -388,7 +387,7 @@
 //   return (
 //     <div className="App">
 //      <Counter count={this.state.count} />
-//       <button 
+//       <button
 //       onClick={()=>{this.setState({count:this.state.count+1})}}
 //       >Update Count</button>
 //     </div>
@@ -400,10 +399,7 @@
 
 // Lec- 39 end Pure component using class:
 
-
 // Lec- 40 start UseMemo Hook in Reactjs.
-
-
 
 // import './App.css';
 // import React, { useState, useMemo } from 'react'
@@ -435,7 +431,6 @@
 // Lec- 40 End UseMemo Hook in Reactjs.
 
 // // Lec-41 start Ref in React js using class component:
-
 
 // import './App.css';
 // import React,{createRef} from 'react'
@@ -471,8 +466,7 @@
 
 // Lec-41 end Ref in React js using class component:
 
-
-// // // Lec-42 start UseRef in React 
+// // // Lec-42 start UseRef in React
 // import React,{useRef} from 'react'
 // function App() {
 //   let inputRef=useRef(null);
@@ -496,39 +490,51 @@
 
 // export default App;
 
-
-// // Lec-42 end UseRef in React 
+// // Lec-42 end UseRef in React
 
 // // Lec-43 Start forwardRef in Reactjs
 
+// import "./App.css";
+// import React, { useRef } from "react";
+// import User from "./lec-43-forwardRef";
+// function App() {
+//   let inputRef = useRef(null);
+//   function updateInput() {
+//     inputRef.current.value = "1000";
+//     inputRef.current.style.color = "red";
+//     inputRef.current.focus();
+//   }
+//   return (
+//     <div className="App">
+//       <h1>forwardRef in React </h1>
+//       <User ref={inputRef} />
+//       <button onClick={updateInput}>Update Input Box</button>
+//     </div>
+//   );
+// }
+// export default App;
+
+// // Lec-43 End forwardRef in Reactjs
+
+// // Lec-44 Controlled Component
+
 
 import './App.css';
-import React ,{useRef} from 'react'
-import User from './lec-43-forwardRef';
+import React,{useState} from 'react'
 function App() {
-  let inputRef=useRef(null)
-  function updateInput()
-  {
-    inputRef.current.value="1000";
-    inputRef.current.style.color="red"
-    inputRef.current.focus()
+  let [val,setVal]=useState("")
+  let [item,setItem]=useState("")
 
-
-  }
-  return (
+   return (
     <div className="App">
-      <h1>forwardRef in React </h1>
-      <User ref={inputRef} />
-      <button onClick={updateInput} >Update Input Box</button>
+      <h1>Controlled Component </h1>
+      <input type="text" value={val} onChange={(e)=>setVal(e.target.value)} />
+      <input type="text" value={item} onChange={(e)=>setItem(e.target.value)} />
+   <h2>{val}</h2>
+   <h2>{item}</h2>
     </div>
   );
 
 }
-export default App;
-
-// // Lec-43 End forwardRef in Reactjs
-
-
-
-
+export default  App;
 
