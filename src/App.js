@@ -543,37 +543,78 @@
 // // Lec-45 start Uncontrolled Component in useRef:
 
 
-import './App.css';
-import React, { useRef } from 'react'
-function App() {
-  let inputRef = useRef(null)
-  let inputRef2 = useRef(null)
+// import './App.css';
+// import React, { useRef } from 'react'
+// function App() {
+//   let inputRef = useRef(null)
+//   let inputRef2 = useRef(null)
 
-  function submitForm(e) {
-    e.preventDefault()
-    console.warn("input field 1 value : ", inputRef.current.value)
-    console.warn("input field 2 value : ", inputRef2.current.value)
-    let input3 = document.getElementById('input3').value
-    console.warn("input field 3 value : ", input3)
+//   function submitForm(e) {
+//     e.preventDefault()
+//     console.warn("input field 1 value : ", inputRef.current.value)
+//     console.warn("input field 2 value : ", inputRef2.current.value)
+//     let input3 = document.getElementById('input3').value
+//     console.warn("input field 3 value : ", input3)
 
 
-  }
-  return (
-    <div className="App">
-      <h1>Uncontrolled Component </h1>
-      <form onSubmit={submitForm} >
-        <input ref={inputRef} type="text" /> <br /> <br />
-        <input ref={inputRef2} type="text" /> <br /> <br />
-        <input id="input3" type="text" /> <br /> <br />
+//   }
+//   return (
+//     <div className="App">
+//       <h1>Uncontrolled Component </h1>
+//       <form onSubmit={submitForm} >
+//         <input ref={inputRef} type="text" /> <br /> <br />
+//         <input ref={inputRef2} type="text" /> <br /> <br />
+//         <input id="input3" type="text" /> <br /> <br />
 
-        <button>Submit</button>
-      </form>
-    </div>
-  );
+//         <button>Submit</button>
+//       </form>
+//     </div>
+//   );
 
-}
-export default App;
+// }
+// export default App;
 
 // // Lec-45 end Uncontrolled Component in useRef:
+
+// // Lec-46 start High Order Component (HOC)
+
+
+import './App.css';
+import React, { useRef, useState } from 'react'
+function App() {
+  return (
+    <div className="App">
+      <h1>HOC </h1>
+      <HOCRed cmp={Counter} />
+      <HOCGreen cmp={Counter} />
+      <HOCBlue cmp={Counter} />
+
+    </div>
+  );
+}
+function HOCRed(props)
+{
+  return <h2 style={{backgroundColor:'red'}}>Red<props.cmp /></h2>
+}
+function HOCGreen(props)
+{
+  return <h2 style={{backgroundColor:'green'}}>Green<props.cmp /></h2>
+}
+function HOCBlue(props)
+{
+  return <h2 style={{backgroundColor:'blue'}}>blue <props.cmp /></h2>
+}
+function Counter()
+{
+  const [count,setCount]=useState(0)
+  return<div>
+    <h3>{count}</h3>
+    <button onClick={()=>setCount(count+1)}>Update</button>
+  </div>
+}
+
+export default App;
+// // Lec-46 end High Order Component (HOC)
+
 
 
